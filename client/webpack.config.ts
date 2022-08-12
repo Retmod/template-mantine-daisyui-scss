@@ -9,16 +9,27 @@ const config: webpack.Configuration = {
 	},
 	entry: ['./src/index.tsx'],
 	resolve: {
-		extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.png', '.svg', '.ttf'],
+		extensions: [
+			'.js',
+			'.ts',
+			'.jsx',
+			'.tsx',
+			'.css',
+			'.png',
+			'.svg',
+			'.ttf',
+			'.scss',
+		],
 	},
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
+				test: /\.s?css$/,
 				use: [
 					{ loader: 'style-loader' },
 					{ loader: 'css-loader' },
 					{ loader: 'postcss-loader' },
+					{ loader: 'sass-loader' },
 				],
 			},
 			{
