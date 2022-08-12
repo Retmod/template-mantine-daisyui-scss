@@ -1,8 +1,13 @@
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+import './index.scss';
 import Wrappers from './wrappers';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement,
 );
-root.render(<Wrappers />);
+root.render(
+	<BrowserRouter>
+		<Wrappers />
+	</BrowserRouter>,
+);
