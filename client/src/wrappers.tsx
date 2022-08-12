@@ -1,14 +1,15 @@
-import { BrowserRouter } from 'react-router-dom';
 import Router from './router';
+import { MantineProvider } from '@mantine/core';
+import { NotificationsProvider } from '@mantine/notifications';
 
 export default function Wrappers() {
 	return (
-		<>
-			{/* You can replace "BrowserRouter with other react-router routers." */}
-			<BrowserRouter>
-				{/* Insert your wrappers here. They should go around the <Router /> class. */}
-				<Router />
-			</BrowserRouter>
-		</>
+		<div className='text-base-content bg-base-300'>
+			<MantineProvider theme={{ primaryColor: 'cyan', colorScheme: 'dark' }}>
+				<NotificationsProvider>
+					<Router />
+				</NotificationsProvider>
+			</MantineProvider>
+		</div>
 	);
 }
